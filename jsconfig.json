@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            // '@/*' 입력 시 VSCode 자동완성이 'src/*' 경로를 제안해줌
+            "@/*": ["src/*"]
+        }
+    }
+}
