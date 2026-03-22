@@ -50,7 +50,7 @@ function HomePage() {
             <div className="px-4 py-4 flex flex-wrap gap-2 bg-white/40">
                 <button
                     onClick={() => setSelectedType('')}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${selectedType === '' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-600'}`}
+                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${selectedType === '' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-600'}`}
                 >
                     전체
                 </button>
@@ -59,7 +59,7 @@ function HomePage() {
                         key={en}
                         onClick={() => setSelectedType(en)}
                         style={{ background: typeColors[en] }}
-                        className="px-3 py-1.5 rounded-full text-xs font-medium transition-all text-gray-600"
+                        className="px-3 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer text-gray-600"
                     >
                         {ko}
                     </button>
@@ -68,7 +68,9 @@ function HomePage() {
 
             {/* 목록 영역 */}
             <div className="p-4">
-                <p className="text-xs text-[#8AB5C2] mb-3 font-medium">{filtered?.length || '151'}마리</p>
+                <p className="text-xs text-[#8AB5C2] mb-3 font-medium">
+                    {isPending ? '151마리' : `${filtered?.length ?? pokemons?.length}마리`}
+                </p>
 
                 {isPending ? (
                     <HomeLoading />
