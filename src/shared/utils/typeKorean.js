@@ -18,3 +18,25 @@ export const typeKorean = {
     steel: '강철',
     fairy: '페어리',
 };
+
+// 타입별 색상
+export const typeColors = {
+    normal: '#E8E4D9',
+    fire: '#FFBFA3',
+    water: '#A8D5E2',
+    grass: '#B8E6B8',
+    electric: '#FFE699',
+    ice: '#D4EFEF',
+    fighting: '#FFB3B3',
+    poison: '#E6BFFF',
+    ground: '#E6D7A3',
+    flying: '#D9CFFF',
+    psychic: '#FFB3D9',
+    bug: '#D9E699',
+    rock: '#D9CDB3',
+    ghost: '#D4C4E6',
+    dragon: '#BFB3FF',
+    dark: '#C9B8A8',
+    steel: '#D9D9E6',
+    fairy: '#FFD9F2',
+};
