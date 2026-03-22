@@ -1,8 +1,13 @@
+import HomePage from '@/pages/HomePage';
+import DetailPage from '@/pages/DetailPage';
+import { Routes, Route } from 'react-router-dom';
+
 function App() {
     return (
-        <>
-            <h1>테스트</h1>
-        </>
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/pokemon/:id" element={<DetailPage />} />
+        </Routes>
     );
 }
 
