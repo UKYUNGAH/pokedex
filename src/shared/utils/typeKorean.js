@@ -40,3 +40,21 @@ export const typeColors = {
     steel: '#D9D9E6',
     fairy: '#FFD9F2',
 };
+
+export const statKorean = {
+    hp: 'HP',
+    attack: '공격',
+    defense: '방어',
+    'special-attack': '특수공격',
+    'special-defense': '특수방어',
+    speed: '스피드',
+};
+
+export const statColors = {
+    hp: '#FFB3B3',
+    attack: '#FFBFA3',
+    defense: '#FFE699',
+    'special-attack': '#D9CFFF',
+    'special-defense': '#B8E6B8',
+    speed: '#FFD9F2',
+};

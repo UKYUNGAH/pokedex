@@ -28,6 +28,15 @@ export const getPokeListWithDetail = async (limit = 151) => {
     return details;
 };
 
+export const getPokeDetailWithSpecies = async (id) => {
+    const detail = await getPokeDetail(id);
+    const species = await getPokeSpecies(id);
+    const koreanName = species.names.find((n) => n.language.name === 'ko')?.name;
+    const koreanDesc = species.flavor_text_entries.find((f) => f.language.name === 'ko')?.flavor_text;
+
+    return { ...detail, koreanName, koreanDesc };
+};
+
 // 이미지
 export const getOfficialArtwork = (id) =>
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;

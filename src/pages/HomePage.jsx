@@ -2,6 +2,7 @@ import { usePokeList } from '@/entities/pokemon/api/usePokeList';
 import { getOfficialArtwork } from '@/shared/api/pokemon';
 import { Link } from 'react-router-dom';
 import { typeKorean, typeColors } from '@/shared/utils/typeKorean';
+import { formatId } from '../shared/utils/formatPokemon';
 
 function HomePage() {
     const { pokemons, isPending, isError } = usePokeList();
@@ -31,12 +32,17 @@ function HomePage() {
                                 className="block bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
                             >
                                 {/* 이미지 영역 */}
-                                <div className="bg-[#F5F5F5] p-4 flex justify-center items-center h-28 rounded-t-2xl">
-                                    <img
-                                        src={getOfficialArtwork(item.id)}
-                                        alt={item.koreanName || item.name}
-                                        className="w-24 h-24 object-contain drop-shadow-md"
-                                    />
+                                <div className="bg-[#F5F5F5] p-4 flex justify-center items-center rounded-t-2xl relative">
+                                    <p className="absolute top-2 right-2 text-[10px] font-bold text-gray-400">
+                                        {formatId(item.id)}
+                                    </p>
+                                    <div className="flex justify-center items-center h-28">
+                                        <img
+                                            src={getOfficialArtwork(item.id)}
+                                            alt={item.koreanName || item.name}
+                                            className="w-24 h-24 object-contain drop-shadow-md"
+                                        />
+                                    </div>
                                 </div>
                                 {/* 정보 영역 */}
                                 <div className="p-3">
