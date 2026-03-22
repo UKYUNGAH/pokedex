@@ -4,6 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 import { formatId } from '../shared/utils/formatPokemon';
 import { getOfficialArtwork } from '@/shared/api/pokemon';
 import { typeKorean, typeColors, statKorean, statColors } from '@/shared/utils/typeKorean';
+import DetailLoading from '@/shared/ui/DetailLoading';
+import ErrorMessage from '@/shared/ui/ErrorMessage';
 
 export default function DetailPage() {
     const { id } = useParams();
@@ -12,8 +14,8 @@ export default function DetailPage() {
     const { pokeDetail, isPending, isError } = usePokeDetail(id);
 
     console.log(pokeDetail);
-    if (isPending) return <p>로딩중</p>;
-    if (isError) return <p>에러임</p>;
+    if (isPending) return <DetailLoading />;
+    if (isError) return <ErrorMessage />;
     return (
         <>
             <div className="w-full max-w-[375px] bg-white/40 shadow-2xl min-h-screen pb-8">
