@@ -80,7 +80,11 @@ export default function PokemonChat({ pokemonName, koreanName }) {
                         <input
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
-                            onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
+                                    handleSend();
+                                }
+                            }}
                             placeholder="질문을 입력해줘..."
                             className="flex-1 text-xs border border-gray-200 rounded-full px-3 py-2 focus:outline-none"
                         />
