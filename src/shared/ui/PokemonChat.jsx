@@ -5,7 +5,7 @@ import { askPokemon } from '@/shared/api/gemini';
 export default function PokemonChat({ pokemonName, koreanName }) {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
-        { role: 'ai', text: `안녕! 나는 ${koreanName || '포켓몬 도우미'}야. 뭐든 물어봐!` },
+        { role: 'ai', text: `안녕! 나는 ${koreanName || '오박사'}야. 뭐든 물어봐!` },
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -47,7 +47,7 @@ export default function PokemonChat({ pokemonName, koreanName }) {
                     <div className="bg-[#A8D5E2] px-4 py-3 flex items-center gap-2">
                         <MessageCircle className="text-[#5A8A9A] size-4" />
                         <p className="text-sm font-bold text-[#5A8A9A]">
-                            {koreanName ? `${koreanName}에게 질문하기` : '포켓몬에게 질문하기'}
+                            {koreanName ? `${koreanName}에게 질문하기` : '오박사에게 질문하기'}
                         </p>
                     </div>
 
