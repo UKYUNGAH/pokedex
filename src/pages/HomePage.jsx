@@ -6,6 +6,7 @@ import { formatId } from '../shared/utils/formatPokemon';
 import { Trees, Search } from 'lucide-react';
 import HomeLoading from '@/shared/ui/HomeLoading';
 import { useState } from 'react';
+import PokemonChat from '@/shared/ui/PokemonChat';
 
 function HomePage() {
     const { pokemons, isPending, isError } = usePokeList();
@@ -23,7 +24,7 @@ function HomePage() {
     return (
         <>
             {/* 타이틀 영역 */}
-            <div class="bg-linear-to-b from-[#A8D5E2] to-[#D4F5FF] pt-8 pb-6 px-5 relative overflow-hidden">
+            <div className="bg-linear-to-b from-[#A8D5E2] to-[#D4F5FF] pt-8 pb-6 px-5 relative overflow-hidden">
                 <div>
                     <div className="absolute top-4 left-8 w-16 h-8 bg-white/60 rounded-full blur-sm"></div>
                     <div className="absolute top-6 right-12 w-20 h-10 bg-white/60 rounded-full  blur-md"></div>
@@ -134,6 +135,8 @@ function HomePage() {
                     </>
                 )}
             </div>
+
+            <PokemonChat />
         </>
     );
 }

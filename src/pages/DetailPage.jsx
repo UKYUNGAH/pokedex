@@ -6,6 +6,7 @@ import { getOfficialArtwork } from '@/shared/api/pokemon';
 import { typeKorean, typeColors, statKorean, statColors } from '@/shared/utils/typeKorean';
 import DetailLoading from '@/shared/ui/DetailLoading';
 import ErrorMessage from '@/shared/ui/ErrorMessage';
+import PokemonChat from '@/shared/ui/PokemonChat';
 
 export default function DetailPage() {
     const { id } = useParams();
@@ -94,6 +95,9 @@ export default function DetailPage() {
                     </div>
                 </div>
             </div>
+
+            {/* AI 채팅 */}
+            <PokemonChat pokemonName={pokeDetail.name} koreanName={pokeDetail.koreanName} />
         </>
     );
 }
